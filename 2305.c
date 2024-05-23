@@ -62,7 +62,8 @@ void printuf(int *numeros, int arraySize) {
   }
 }
 
-//odernação dos números através do insertionsort, a funcao recebe o array gerado aleatoriamente (desordenado) e seu tamanho
+// odernação dos números através do insertionsort, a funcao recebe o array
+// gerado aleatoriamente (desordenado) e seu tamanho
 int *insertionSort(int *numsDesordenados, int tArray) {
 
   for (int j = 1; j < tArray; j++) {
@@ -75,50 +76,54 @@ int *insertionSort(int *numsDesordenados, int tArray) {
     numsDesordenados[i + 1] = key;
   }
 
-    //embora a variavel chame-se "numsDesordenados", eles estão ordernados após passarem pelo loop
+  // embora a variavel chame-se "numsDesordenados", eles estão ordernados após
+  // passarem pelo loop
   return numsDesordenados;
 }
 
 int *ordenararrays(int tipoOrdenacao, int tamanhoArray) {
 
-    //declarações para medir o tempo
+  // declarações para medir o tempo
   struct timespec tInicioQsort;
   struct timespec tFinalQsort;
   struct timespec tInicioIsort;
   struct timespec tFinalIsort;
 
-    //arrays que guardarao o resultado do tempo de execucao, [0] armazena o tempo em ns e [1] o tempo em s
+  // arrays que guardarao o resultado do tempo de execucao, [0] armazena o tempo
+  // em ns e [1] o tempo em s
   int *tempo_execucaoQ = (int *)malloc(tamanhoArray * sizeof(int));
   int *tempo_execucaoI = (int *)malloc(tamanhoArray * sizeof(int));
 
-    //quando ordenaarrays é chamada com o parametro '1' ela gera o array aleatoriamente e o organiza com 'qsort'
+  // quando ordenaarrays é chamada com o parametro '1' ela gera o array
+  // aleatoriamente e o organiza com 'qsort'
   if (tipoOrdenacao == 1) {
     int *sorteioA = sortearNumeros(tamanhoArray);
 
     // printf("Array desordenado:");
     // printuf(sorteioA, tamanhoArray);
 
-    //tempo de sistema antes do qsort rodar
+    // tempo de sistema antes do qsort rodar
     clock_gettime(CLOCK_MONOTONIC, &tInicioQsort);
 
     qsort(sorteioA, tamanhoArray, sizeof(int), compare);
 
-    //tempo de sistema após o qsort rodar
+    // tempo de sistema após o qsort rodar
     clock_gettime(CLOCK_MONOTONIC, &tFinalQsort);
 
     // printf("\nArray ordenado:");
     // printuf(sorteioA, tamanhoArray);
 
-    //tempo total = tempo final - tempo inicial
+    // tempo total = tempo final - tempo inicial
     tempo_execucaoQ[0] = tFinalQsort.tv_nsec - tInicioQsort.tv_nsec;
     tempo_execucaoQ[1] = tFinalQsort.tv_sec - tInicioQsort.tv_sec;
 
-    //liberacao de memoria
+    // liberacao de memoria
     free(sorteioA);
     return tempo_execucaoQ;
 
-  } 
-      //quando ordenaarrays é chamada com o parametro '2' ela gera o array aleatoriamente e o organiza com 'insertion-sort'
+  }
+  // quando ordenaarrays é chamada com o parametro '2' ela gera o array
+  // aleatoriamente e o organiza com 'insertion-sort'
   else if (tipoOrdenacao == 2) {
     int *sorteioB = sortearNumeros(tamanhoArray);
 
@@ -147,16 +152,21 @@ int main() {
   printf("Informe o tamanho do array digitado com um inteiro: ");
   scanf("%d", &arraySize);
 
-//chama a funçao de ordenacao no modo desejado e recebe o tempo de execucao
+  // chama a funçao de ordenacao no modo desejado e recebe o tempo de execucao
   int *qsort = ordenararrays(1, arraySize);
   int *insertionsort = ordenararrays(2, arraySize);
 
   printf("\n Tempo execução QSORT:");
-  printf("%dns %ds", qsort[0], qsort[1]);
+  printf("\n %dns %ds", qsort[0], qsort[1]);
 
-  printf("\n Tempo execução INSERTIONSORT:");
-  printf("\n %dns \n %ds", insertionsort[0], insertionsort[1]);
+  printf("\n\n Tempo execução INSERTIONSORT:");
+  printf("\n %dns %ds", insertionsort[0], insertionsort[1]);
 
+  if (qsort[0] > insertionsort[0]) {
+    printf("\n\n QSORT demorou mais");
+  } else if (insertionsort[0] > qsort[0]) {
+    printf("\n\n INSERTION-SORT demorou mais");
+  }
   free(qsort);
   free(insertionsort);
 
