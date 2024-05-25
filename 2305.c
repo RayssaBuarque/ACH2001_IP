@@ -142,7 +142,7 @@ int main() {
   printf("\n Tempo execução QSORT:");
   printf("\n %dns %ds", dadoQsort[0], dadoQsort[1]);
 
-  printf("\n\n Tempo execução INSERTIONSORT:");
+  printf("\n\n Tempo execução INSERTION-SORT:");
   printf("\n %dns %ds", insertionsort[0], insertionsort[1]);
 
   if (dadoQsort[0] > insertionsort[0]) {
