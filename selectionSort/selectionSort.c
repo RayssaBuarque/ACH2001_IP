@@ -58,7 +58,6 @@ int main(){
     int tamanhoArray = 7;
     int * arrayNum = sortearNumeros(tamanhoArray);
 
-
     selectionSort(arrayNum, tamanhoArray);
     printuf(arrayNum, tamanhoArray);
     free(arrayNum);
