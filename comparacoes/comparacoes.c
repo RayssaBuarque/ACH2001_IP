@@ -124,7 +124,8 @@ int *ordenararrays(int tipoOrdenacao, int tamanhoArray) {
     tempo_execucaoQ[0] = tFinalQsort.tv_nsec - tInicioQsort.tv_nsec;
     tempo_execucaoQ[1] = tFinalQsort.tv_sec - tInicioQsort.tv_sec;
 
-    // liberacao de memoria
+    printf("QUICK SORT MAIOR VALOR: %d\n", sorteioA[(tamanhoArray - 1)]);
+
     free(sorteioA);
     return tempo_execucaoQ;
 
@@ -141,6 +142,8 @@ int *ordenararrays(int tipoOrdenacao, int tamanhoArray) {
     tempo_execucaoI[0] = tFinalIsort.tv_nsec - tInicioIsort.tv_nsec;
     tempo_execucaoI[1] = tFinalIsort.tv_sec - tInicioIsort.tv_sec;
 
+    printf("INSERTION SORT MAIOR VALOR: %d\n", ordenaB[(tamanhoArray - 1)]);
+
     free(sorteioB);
     return tempo_execucaoI;
   }
@@ -154,6 +157,8 @@ int *ordenararrays(int tipoOrdenacao, int tamanhoArray) {
 
     tempo_execucaoS[0] = tFinalSsort.tv_nsec - tInicioSsort.tv_nsec;
     tempo_execucaoS[1] = tFinalSsort.tv_sec - tInicioSsort.tv_sec;
+
+    printf("SELECTION SORT MAIOR VALOR: %d\n", sorteioC[(tamanhoArray - 1)]);
 
     free(sorteioC);
     return tempo_execucaoS;
