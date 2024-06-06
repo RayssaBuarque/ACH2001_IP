@@ -1,6 +1,16 @@
-// #define tamanhoArray 7
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
+
+
+/********** FUNÇÕES AUXILIARES ***********/
+// calculando em nanossegundos o período de tempo
+long getTime(){
+  struct timespec timestamp;
+  clock_gettime(CLOCK_MONOTONIC, &timestamp);
+
+  return ((timestamp.tv_sec*1000000000) + timestamp.tv_nsec);
+}
 
 int *sortearNumeros(int tamanhoArray) {
   // Ponteiro que aponta para a memória alocada de maneira dinâmica para o array
@@ -23,6 +33,8 @@ void printuf(int *numeros, int arraySize) {
     printf("%d\n", numeros[i]);
   }
 }
+
+/********** FUNÇÕES DO SELECTION SORT ***********/
 
 // função que retorna o índice do maior item da array
 int maior(int *array, int tamanhoArray){
@@ -55,10 +67,19 @@ void selectionSort(int *array, int tamanhoArray){
 }
 
 int main(){
-    int tamanhoArray = 7;
+    int tamanhoArray;
+    printf("\nInforme o tamanho do array digitado com um inteiro: ");
+    scanf("%d", &tamanhoArray);
+
+    long tempoInicial;
+    long tempoFinal;
     int * arrayNum = sortearNumeros(tamanhoArray);
 
-    selectionSort(arrayNum, tamanhoArray);
-    printuf(arrayNum, tamanhoArray);
+    tempoInicial = getTime();
+      selectionSort(arrayNum, tamanhoArray);
+    tempoFinal = getTime();
+
+    printf("Tempo de execução: %lu ns\n\n", (tempoFinal - tempoInicial));
+    //printuf(arrayNum, tamanhoArray);
     free(arrayNum);
 }
