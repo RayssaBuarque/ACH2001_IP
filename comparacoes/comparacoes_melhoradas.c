@@ -161,19 +161,19 @@ int main() {
   scanf("%d", &arraySize);
 
   // chama a funçao de ordenacao no modo desejado e recebe o tempo de execucao
-  long dadoQsort = ordenararrays(1, arraySize);
+  // long dadoQsort = ordenararrays(1, arraySize);
   long dadoIsort = ordenararrays(2, arraySize);
-  long dadoSsort = ordenararrays(3, arraySize);
+  // long dadoSsort = ordenararrays(3, arraySize);
 
   printf("\n**********************************\n");
-  printf("\n Tempo execução QSORT:");
-  printf("\n %lu\n", dadoQsort);
+  // printf("\n Tempo execução QSORT:");
+  // printf("\n %lu\n", dadoQsort);
 
   printf("\n Tempo execução INSERTION-SORT:");
   printf("\n %lu\n", dadoIsort);
 
-  printf("\n\n Tempo execução SELECTION-SORT:");
-  printf("\n %lu\n", dadoSsort);
+  // printf("\n\n Tempo execução SELECTION-SORT:");
+  // printf("\n %lu\n", dadoSsort);
 
   return 0;
 }
