@@ -66,7 +66,7 @@ int *insertionSort(int *numsDesordenados, int tamanhoArray) {
     int key = numsDesordenados[j];
     int i = j - 1;
     
-    while ((i > 0) && (numsDesordenados[i] > key)) {
+    while ((i >= 0) && (numsDesordenados[i] > key)) {
       numsDesordenados[i + 1] = numsDesordenados[i];
       i = i - 1;
     }
