@@ -1,7 +1,7 @@
-# Resoluções de atividades da disciplina de IP (ACH2001)
+# Algoritmos de ordenação da disciplina de IP (ACH2001)
 
-A idéia é que este repositório conterá explicações e código-fonte de IP. No momento contém alguns fragmentos de código e o [plano de atividades que o professor decidiu usar](./plano-08-05-2024.md).
-Os códigos das atividades foram desenvolvidos por [Alice Lopes](https://github.com/llicels) e [Rayssa Buarque](https://github.com/rayssabuarque)
+Esse repositório contém uma lista de algoritmos de ordenação de vetores testados e aprimorados durante as aulas da disciplina ACH2001 na EACH - USP.
+Os códigos foram desenvolvidos por [Alice Lopes](https://github.com/llicels) e [Rayssa Buarque](https://github.com/rayssabuarque)
 
 ## Fragmentos de código
 
