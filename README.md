@@ -1,9 +1,9 @@
-# Algoritmos da disciplina de Introdução a Programação (ACH2001) 👩‍💻👩‍💻
+# Algoritmos da disciplina de Introdução a Programação (ACH2001) 👩‍💻👩‍💻 ![C](https://img.shields.io/badge/c-%2300599C.svg?style=for-the-badge&logo=c&logoColor=white)
 
 Esse repositório contém uma lista de algoritmos de ordenação de vetores testados e aprimorados durante as aulas da disciplina ACH2001 na EACH - USP.
 Os códigos foram desenvolvidos por [Alice Lopes](https://github.com/llicels) e [Rayssa Buarque](https://github.com/rayssabuarque) com auxílio do material disponibilizado pelo professor durante o primeiro período de graduação em Sistemas de Informação.
 
-## Fragmentos de código ![C](https://img.shields.io/badge/c-%2300599C.svg?style=for-the-badge&logo=c&logoColor=white)
+## Fragmentos de código 
 
 #### Algoritmos de ordenação:
 - `insertionSort()` [código-fonte](./insertionSort.c);
