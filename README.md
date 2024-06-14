@@ -1,13 +1,14 @@
-# Algoritmos de ordenação da disciplina de IP (ACH2001)
+# Algoritmos da disciplina de Introdução a Programação (ACH2001)
 
 Esse repositório contém uma lista de algoritmos de ordenação de vetores testados e aprimorados durante as aulas da disciplina ACH2001 na EACH - USP.
-Os códigos foram desenvolvidos por [Alice Lopes](https://github.com/llicels) e [Rayssa Buarque](https://github.com/rayssabuarque)
+Os códigos foram desenvolvidos por [Alice Lopes](https://github.com/llicels) e [Rayssa Buarque](https://github.com/rayssabuarque) com auxílio do material disponibilizado pelo professor durante o primeiro período de graduação em Sistemas de Informação.
 
 ## Fragmentos de código
 
-- Ler arquivo [código-fonte](./arquivos);
-- `insertionSort()` [código-fonte](./insertionSort);
-- `clock_gettime()` da biblioteca padrão [código-fonte](./time);
-- `qsort()` da biblioteca padrão [código-fonte](./qsort);
-- `selectionSort()` [código-fonte](./selectionSort);
-- Gerar números aleatórios e exploração do código-fonte de `glibc` [código-fonte](./rand);
+- `insertionSort()` [código-fonte](./insertionSort.c);
+- `quickSort()` [código-fonte](./quickSort.c);
+- `selectionSort()` [código-fonte](./selectionSort.c);
+- Interfaces de [funções auxiliares](./comuns.h);
+- Arquivos de [anotação de aulas](./messyarchives);
+- Exemplo de [sort linear binário](./sort-da-mochila-binaria);
+- Exemplo de código de [leitura de arquivos](./leitura-de-arquivos);

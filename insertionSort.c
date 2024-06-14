@@ -4,9 +4,6 @@
 #include <time.h>
 #include "comuns.h"
 
-// Função para gerar os números aleatórios
-// Vai retornar um ponteiro de inteiro e recebe o tamanho do array para gerar os números em loop
-
 // Loop para printar todos os números, recebe o array dos números sorteados
 void printuf(int *numeros, int arraySize) {
   for (int i = 0; i < arraySize; i++) {
@@ -41,7 +38,7 @@ int main() {
   printf("Informe o tamanho do array digitado com um inteiro: ");
   scanf("%d", &arraySize);
 
-  // chama a funçao de ordenacao e recebe o tempo de execucao
+  // chama a função de ordenação e recebe o tempo de execução
   int *sorteio = sortearNumeros(arraySize);
 
   tempoInicial= getTime();
@@ -49,8 +46,6 @@ int main() {
   tempoFinal = getTime();
 
   long tempoIsort = tempoFinal - tempoInicial;
-
-  //printuf(sorteio, arraySize);
 
   printf("\n /********************************************/ \n %lu\n", tempoIsort);
 
